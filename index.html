@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="zh-Hant"><head>
+  <meta charset="UTF-8">
+  <title>騎車不曬腿，穿了也不悶｜曬不著 SunHide</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+    
+      :root {
+        --panel-bg: #f3f4f6;
+        --panel-border: #e5e7eb;
+        --panel-radius: 16px;
+        --panel-shadow: 0 14px 32px rgba(15, 23, 42, 0.12);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+       {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 20px 16px 32px;
+      }
+
+      .page-header {
+        margin-bottom: 18px;
+      }
+
+      .page-title {
+        font-size: 1.6rem;
+        font-weight: 900;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .page-title i {
+        color: #6366f1;
+      }
+
+      .page-subtitle {
+        font-size: 0.95rem;
+        color: #6b7280;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+        gap: 18px;
+        align-items: flex-start;
+        margin-bottom: 20px;
+      }
+
+      .panel {
+        background: #f9fafb;
+        border-radius: var(--panel-radius);
+        border: 1px solid var(--panel-border);
+        box-shadow: var(--panel-shadow);
+        padding: 16px 16px 18px;
+      }
+
+      .panel-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+      }
+
+      .panel-title {
+        font-size: 1rem;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .panel-title i {
+        color: #4f46e5;
+      }
+
+      .panel-sub {
+        font-size: 0.82rem;
+        color: #9ca3af;
+      }
+
+      /* 左側設定表單 */
+      .form-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 10px;
+        margin-top: 4px;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+      }
+
+      .form-row-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      .form-row-3 {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 10px;
+      }
+
+      label {
+        font-size: 0.8rem;
+        color: #4b5563;
+        font-weight: 500;
+      }
+
+      input[type="text"],
+      input[type="url"],
+      textarea {
+        font-family: inherit;
+        font-size: 0.86rem;
+        padding: 7px 9px;
+        border-radius: 9px;
+        border: 1px solid #d1d5db;
+        background: #ffffff;
+        outline: none;
+        transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      }
+
+      input[type="text"]:focus,
+      input[type="url"]:focus,
+      textarea:focus {
+        border-color: #6366f1;
+        box-shadow: 0 0 0 1px rgba(99, 102, 241, 0.5);
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 54px;
+        max-height: 140px;
+      }
+
+      .color-input-row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+
+      .color-input-row input[type="color"] {
+        width: 38px;
+        height: 28px;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        padding: 0;
+        background: transparent;
+      }
+
+      .hint {
+        font-size: 0.75rem;
+        color: #9ca3af;
+      }
+
+      .btn-row {
+        margin-top: 8px;
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        border-radius: 999px;
+        border: none;
+        cursor: pointer;
+        font-size: 0.86rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 7px 14px;
+      }
+
+      .btn-secondary {
+        background: #e5e7eb;
+        color: #374151;
+      }
+
+      .btn-primary {
+        background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+        color: #fff;
+        font-weight: 600;
+        box-shadow: 0 12px 26px rgba(79, 70, 229, 0.35);
+      }
+
+      .btn-primary i {
+        font-size: 0.9rem;
+      }
+
+      /* 右側預覽包裝 */
+      .preview-wrapper {
+        background: #111827;
+        border-radius: var(--panel-radius);
+        border: 1px solid #1f2937;
+        box-shadow: 0 20px 40px rgba(15, 23, 42, 0.45);
+        padding: 10px;
+        color: #e5e7eb;
+      }
+
+      .preview-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+        font-size: 0.8rem;
+        color: #9ca3af;
+      }
+
+      .preview-dots {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+      }
+
+      .preview-dot {
+        width: 9px;
+        height: 9px;
+        border-radius: 999px;
+        background: #4b5563;
+      }
+
+      .preview-inner {
+        background: #f3f4f6;
+        border-radius: 12px;
+        overflow: auto;
+        max-height: 620px;
+        border: 1px solid #e5e7eb;
+        padding: 0;
+      }
+
+      #previewLanding {
+        min-height: 560px;
+      }
+
+      /* 下方輸出程式碼區塊 */
+      .code-panel {
+        margin-top: 8px;
+      }
+
+      .code-panel textarea {
+        width: 100%;
+        min-height: 220px;
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+          Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.78rem;
+        background: #020617;
+        color: #e5e7eb;
+        border-radius: 10px;
+        padding: 10px;
+        border: 1px solid #1e293b;
+        resize: vertical;
+        white-space: pre;
+        overflow: auto;
+      }
+
+      .code-toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+        font-size: 0.82rem;
+        color: #6b7280;
+      }
+
+      .copy-badge {
+        font-size: 0.75rem;
+        background: #e5e7eb;
+        color: #374151;
+        padding: 3px 9px;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .copy-badge i {
+        color: #22c55e;
+      }
+
+      .btn-ghost {
+        background: #111827;
+        color: #e5e7eb;
+        border-radius: 999px;
+        border: 1px solid #4b5563;
+        padding: 5px 12px;
+        font-size: 0.78rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .btn-ghost i {
+        font-size: 0.82rem;
+      }
+
+      .footer-note {
+        margin-top: 8px;
+        font-size: 0.78rem;
+        color: #9ca3af;
+        text-align: right;
+      }
+
+      /* -------- Landing Page 樣板樣式（預覽 + 產出用） -------- */
+
+      .lp-root {
+        --primary: #667eea;
+        --secondary: #764ba2;
+        --gradient: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--secondary) 100%
+        );
+        --bg-light: #f5f5fb;
+        --text-main: #1f2430;
+        --text-muted: #6b7280;
+        --card-radius: 18px;
+        --shadow-soft: 0 18px 35px rgba(15, 23, 42, 0.12);
+
+        font-family: "Noto Sans TC", sans-serif;
+        background: var(--bg-light);
+        color: var(--text-main);
+        line-height: 1.6;
+      }
+
+      .lp-root img {
+        max-width: 100%;
+        display: block;
+      }
+
+      .lp-root a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      .lp-container {
+        width: 100%;
+        max-width: 1120px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .lp-header {
+        background: rgba(245, 245, 251, 0.9);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+      }
+
+      .lp-nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 20px;
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+
+      .lp-nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 1.05rem;
+        color: var(--primary);
+      }
+
+      .lp-nav-logo i {
+        font-size: 1.2rem;
+      }
+
+      .lp-nav-links {
+        display: flex;
+        gap: 16px;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+
+      .lp-nav-links a {
+        position: relative;
+        padding-bottom: 3px;
+      }
+
+      .lp-nav-links a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        border-radius: 999px;
+        background: var(--gradient);
+        transition: width 0.25s ease;
+      }
+
+      .lp-nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .lp-nav-cta {
+        padding: 7px 14px;
+        border-radius: 999px;
+        background: var(--gradient);
+        color: #fff;
+        font-size: 0.85rem;
+        font-weight: 600;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        cursor: pointer;
+      }
+
+      .lp-nav-cta i {
+        font-size: 0.9rem;
+      }
+
+      .lp-hero {
+        background: var(--gradient);
+        color: #fff;
+        padding: 36px 0 42px;
+      }
+
+      .lp-hero-inner {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        gap: 28px;
+        align-items: center;
+      }
+
+      .lp-hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 11px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.16);
+        font-size: 0.82rem;
+        margin-bottom: 10px;
+      }
+
+      .lp-hero-badge span {
+        padding: 2px 7px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.16);
+        font-weight: 600;
+        font-size: 0.78rem;
+      }
+
+      .lp-hero-title {
+        font-size: 1.9rem;
+        font-weight: 900;
+        margin-bottom: 8px;
+      }
+
+      .lp-hero-subtitle {
+        font-size: 0.95rem;
+        color: rgba(241, 245, 249, 0.9);
+        margin-bottom: 16px;
+      }
+
+      .lp-price-row {
+        display: flex;
+        align-items: baseline;
+        gap: 10px;
+        margin-bottom: 16px;
+      }
+
+      .lp-price-current {
+        font-size: 1.6rem;
+        font-weight: 800;
+      }
+
+      .lp-price-original {
+        font-size: 0.9rem;
+        color: rgba(226, 232, 240, 0.85);
+        text-decoration: line-through;
+      }
+
+      .lp-price-tag {
+        font-size: 0.8rem;
+        padding: 3px 9px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.2);
+      }
+
+      .lp-hero-list {
+        list-style: none;
+        margin-bottom: 20px;
+        font-size: 0.9rem;
+      }
+
+      .lp-hero-list li {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5px;
+      }
+
+      .lp-hero-list i {
+        color: #c7d2fe;
+        font-size: 0.9rem;
+      }
+
+      .lp-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 8px;
+      }
+
+      .lp-btn-primary {
+        padding: 10px 20px;
+        border-radius: 999px;
+        background: #fff;
+        color: var(--primary);
+        font-weight: 700;
+        font-size: 0.95rem;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 16px 35px rgba(15, 23, 42, 0.35);
+      }
+
+      .lp-btn-ghost {
+        padding: 8px 16px;
+        border-radius: 999px;
+        border: 1px solid rgba(226, 232, 240, 0.7);
+        background: transparent;
+        color: #e5e7eb;
+        font-size: 0.88rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+      }
+
+      .lp-hero-meta {
+        margin-top: 6px;
+        font-size: 0.8rem;
+        color: rgba(226, 232, 240, 0.88);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .lp-hero-image-wrapper {
+        background: rgba(15, 23, 42, 0.24);
+        padding: 12px;
+        border-radius: 18px;
+        box-shadow: 0 18px 38px rgba(15, 23, 42, 0.55);
+      }
+
+      .lp-hero-image {
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+      }
+
+      .lp-hero-image-caption {
+        margin-top: 8px;
+        font-size: 0.78rem;
+        color: rgba(226, 232, 240, 0.88);
+        display: flex;
+        justify-content: space-between;
+        gap: 6px;
+        flex-wrap: wrap;
+      }
+
+      .lp-section {
+        padding: 36px 0;
+      }
+
+      .lp-section-header {
+        text-align: center;
+        margin-bottom: 22px;
+      }
+
+      .lp-section-eyebrow {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: var(--primary);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 4px;
+      }
+
+      .lp-section-title {
+        font-size: 1.35rem;
+        font-weight: 800;
+        margin-bottom: 6px;
+      }
+
+      .lp-section-desc {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        max-width: 580px;
+        margin: 0 auto;
+      }
+
+      .lp-pain-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 6px;
+      }
+
+      .lp-pain-card {
+        background: #fff;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-soft);
+        padding: 16px 14px 18px;
+        font-size: 0.86rem;
+      }
+
+      .lp-pain-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 999px;
+        background: rgba(102, 126, 234, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+        color: var(--primary);
+        font-size: 1rem;
+      }
+
+      .lp-pain-title {
+        font-weight: 700;
+        font-size: 0.98rem;
+        margin-bottom: 4px;
+      }
+
+      .lp-pain-text {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+      }
+
+      .lp-features-section {
+        background: #fff;
+      }
+
+      .lp-features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 6px;
+      }
+
+      .lp-feature-card {
+        background: #f9fafb;
+        border-radius: var(--card-radius);
+        padding: 16px 14px 18px;
+        box-shadow: 0 12px 26px rgba(148, 163, 184, 0.22);
+        border: 1px solid rgba(226, 232, 240, 0.9);
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        font-size: 0.88rem;
+      }
+
+      .lp-feature-icon {
+        width: 34px;
+        height: 34px;
+        border-radius: 12px;
+        background: var(--gradient);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+      }
+
+      .lp-feature-title {
+        font-weight: 700;
+        font-size: 0.95rem;
+      }
+
+      .lp-feature-text {
+        font-size: 0.86rem;
+        color: var(--text-muted);
+      }
+
+      .lp-specs-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+        gap: 20px;
+        align-items: flex-start;
+      }
+
+      .lp-specs-card {
+        background: #fff;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-soft);
+        padding: 18px 16px;
+        font-size: 0.88rem;
+      }
+
+      .lp-specs-card h3 {
+        font-size: 1rem;
+        margin-bottom: 6px;
+        font-weight: 700;
+      }
+
+      .lp-specs-list {
+        list-style: none;
+        font-size: 0.88rem;
+        color: var(--text-muted);
+        margin-bottom: 10px;
+      }
+
+      .lp-specs-list li {
+        display: flex;
+        gap: 6px;
+        margin-bottom: 5px;
+      }
+
+      .lp-specs-list i {
+        margin-top: 3px;
+        color: var(--primary);
+        font-size: 0.8rem;
+      }
+
+      .lp-specs-highlight {
+        margin-top: 8px;
+        padding: 8px 9px;
+        border-radius: 11px;
+        background: rgba(102, 126, 234, 0.08);
+        font-size: 0.84rem;
+        color: var(--text-main);
+        display: flex;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .lp-specs-taglist {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin-top: 4px;
+      }
+
+      .lp-specs-tag {
+        font-size: 0.78rem;
+        padding: 4px 8px;
+        border-radius: 999px;
+        background: #eef2ff;
+        color: var(--primary);
+        border: 1px solid rgba(129, 140, 248, 0.5);
+      }
+
+      .lp-specs-image-card {
+        background: #fff;
+        border-radius: var(--card-radius);
+        box-shadow: var(--shadow-soft);
+        padding: 12px 12px 14px;
+        font-size: 0.84rem;
+        color: var(--text-muted);
+      }
+
+      .lp-testimonials-section {
+        background: #f1f5f9;
+      }
+
+      .lp-testimonials-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 16px;
+      }
+
+      .lp-testimonial-card {
+        background: #fff;
+        border-radius: var(--card-radius);
+        padding: 14px 14px 16px;
+        box-shadow: 0 14px 32px rgba(148, 163, 184, 0.32);
+        font-size: 0.86rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .lp-testimonial-quote {
+        position: absolute;
+        right: 12px;
+        top: 6px;
+        font-size: 2rem;
+        color: rgba(148, 163, 184, 0.25);
+      }
+
+      .lp-testimonial-header {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 5px;
+      }
+
+      .lp-avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 999px;
+        background: var(--gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      .lp-testimonial-name {
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      .lp-testimonial-role {
+        font-size: 0.78rem;
+        color: var(--text-muted);
+      }
+
+      .lp-testimonial-rating {
+        font-size: 0.78rem;
+        color: #f97316;
+        margin-bottom: 4px;
+      }
+
+      .lp-final-cta {
+        padding: 34px 0 40px;
+      }
+
+      .lp-final-cta-inner {
+        background: var(--gradient);
+        border-radius: 22px;
+        padding: 22px 16px;
+        box-shadow: 0 26px 55px rgba(88, 28, 135, 0.55);
+        color: #fff;
+        display: grid;
+        grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr);
+        gap: 18px;
+        align-items: center;
+        font-size: 0.9rem;
+      }
+
+      .lp-final-cta-title {
+        font-size: 1.35rem;
+        font-weight: 900;
+        margin-bottom: 6px;
+      }
+
+      .lp-final-cta-desc {
+        font-size: 0.9rem;
+        color: rgba(241, 245, 249, 0.9);
+        margin-bottom: 8px;
+      }
+
+      .lp-btn-final {
+        padding: 11px 20px;
+        border-radius: 999px;
+        background: #fff;
+        color: var(--primary);
+        font-weight: 800;
+        font-size: 0.95rem;
+        border: none;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.55);
+        margin-bottom: 5px;
+      }
+
+      .lp-btn-final-sub {
+        font-size: 0.8rem;
+        color: rgba(241, 245, 249, 0.9);
+      }
+
+      .lp-final-cta-meta {
+        font-size: 0.8rem;
+        color: rgba(226, 232, 240, 0.95);
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 4px;
+      }
+
+      .lp-final-cta-meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .lp-final-cta-pricebox {
+        text-align: right;
+        font-size: 0.86rem;
+      }
+
+      .lp-final-cta-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 9px;
+        border-radius: 999px;
+        background: rgba(15, 23, 42, 0.2);
+        font-size: 0.78rem;
+        margin-bottom: 4px;
+      }
+
+      .lp-final-cta-price-now {
+        font-size: 1.35rem;
+        font-weight: 900;
+      }
+
+      .lp-final-cta-price-original {
+        font-size: 0.86rem;
+        text-decoration: line-through;
+        color: rgba(209, 213, 219, 0.95);
+      }
+
+      .lp-footer {
+        padding: 16px 0 22px;
+        font-size: 0.78rem;
+        color: var(--text-muted);
+        text-align: center;
+      }
+
+      .lp-footer span {
+        color: var(--primary);
+        font-weight: 600;
+      }
+
+      /* RWD */
+      @media (max-width: 1040px) {
+        .layout {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      @media (max-width: 960px) {
+        .lp-hero-inner,
+        .lp-specs-grid,
+        .lp-final-cta-inner {
+          grid-template-columns: 1fr;
+        }
+
+        .lp-final-cta-pricebox {
+          text-align: left;
+        }
+
+        .lp-nav-links {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .lp-pain-grid,
+        .lp-features-grid,
+        .lp-testimonials-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .lp-hero {
+          padding: 26px 0 32px;
+        }
+
+        .lp-hero-inner {
+          gap: 20px;
+        }
+
+        .lp-section-title {
+          font-size: 1.2rem;
+        }
+
+        .lp-final-cta-inner {
+          padding: 20px 14px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .lp-container {
+          padding: 0 16px;
+        }
+
+        .lp-btn-primary,
+        .lp-btn-ghost,
+        .lp-nav-cta,
+        .lp-btn-final {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .lp-hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+    
+    /* 僅保留 lp-root 相關樣式，用於獨立頁面 */
+    body { margin: 0; }
+  </style>
+<style>a.lp-nav-cta,a.lp-btn-primary,a.lp-btn-final{text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:.5em}</style></head>
+<body class="lp-root" style="--primary:#fcb69f;--secondary:#ffecd2;--gradient:linear-gradient(135deg, #fcb69f 0%, #ffecd2 100%)">
+  
+<header class="lp-header">
+  <nav class="lp-nav">
+    <div class="lp-nav-logo">
+      <i class="fa-solid fa-bolt"></i>
+      <span>曬不著 SunHide</span>
+    </div>
+    <div class="lp-nav-links">
+      <a href="#pain">痛點說明</a>
+      <a href="#features">商品特色</a>
+      <a href="#specs">詳情規格</a>
+      <a href="#reviews">購物保障</a>
+    </div>
+    <a class="lp-nav-cta" href="https://cc5.ocu.edu.tw/wu/shopee_integrated/platform/product_detail.php?id=1770" target="_blank" rel="noopener">
+      <i class="fa-solid fa-cart-shopping"></i>
+      領券穿上它
+    </a>
+  </nav>
+</header>
+
+<section class="lp-hero">
+  <div class="lp-container lp-hero-inner">
+    <div>
+      <div class="lp-hero-badge"><i class="fa-solid fa-star"></i>新品上市 · <span>機車族必備</span></div>
+      <h1 class="lp-hero-title">騎車不曬腿，穿了也不悶</h1>
+      <p class="lp-hero-subtitle">
+        UPF50+ 長版遮臀防曬外套，給騎機車通勤、上課的女生
+      </p>
+
+      <div class="lp-price-row">
+        <div class="lp-price-current">NT$590</div>
+        
+        <div class="lp-price-tag">新客滿 $299 折 $30 · 7 天鑑賞期</div>
+      </div>
+
+      <ul class="lp-hero-list">
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          UPF50+ 冰絲布，大太陽騎車也安心
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          長版遮臀＋下擺開衩，跨坐也蓋得住
+        </li>
+        <li>
+          <i class="fa-solid fa-circle-check"></i>
+          背部透氣網孔，騎車比較不悶
+        </li>
+      </ul>
+
+      <div class="lp-hero-actions">
+        <a class="lp-btn-primary" href="https://cc5.ocu.edu.tw/wu/shopee_integrated/platform/product_detail.php?id=1770" target="_blank" rel="noopener">
+          <i class="fa-solid fa-bolt"></i>
+          領券穿上它
+        </a>
+        <button class="lp-btn-ghost" onclick="document.getElementById('specs').scrollIntoView({behavior:'smooth'})">
+          <i class="fa-solid fa-circle-info"></i>
+          查看商品詳情
+        </button>
+      </div>
+
+      <div class="lp-hero-meta">
+        <span><i class="fa-solid fa-user-group"></i> 目標客群：18–35 歲騎機車通勤、上課的女生與情侶，預算 200–600 元，想防曬又怕悶熱</span>
+      </div>
+    </div>
+
+    <div class="lp-hero-image-wrapper">
+      <div class="lp-hero-image">
+        <img src="https://cc5.ocu.edu.tw/wu/shopee_integrated/uploads/products/6b04627026660_1795449456.jpg" alt="商品主圖">
+      </div>
+      <div class="lp-hero-image-caption">
+        <span><i class="fa-solid fa-image"></i> 霧粉色・收腰長版・連帽</span>
+        <span><i class="fa-solid fa-mobile-screen"></i> 背部透氣網孔＋下擺開衩</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pain" class="lp-section">
+  <div class="lp-container">
+    <div class="lp-section-header">
+      <div class="lp-section-eyebrow">CUSTOMER PAIN POINTS</div>
+      <h2 class="lp-section-title">夏天騎車，你是不是也遇過這些？</h2>
+      <p class="lp-section-desc">防曬外套不是有穿就好，蓋不蓋得住、悶不悶，差很多。</p>
+    </div>
+
+    <div class="lp-pain-grid">
+      <div class="lp-pain-card">
+        <div class="lp-pain-icon">
+          <i class="fa-solid fa-circle-question"></i>
+        </div>
+        <div class="lp-pain-title">大腿、屁股最容易曬黑</div>
+        <p class="lp-pain-text">一般短版防曬外套只遮上半身，跨上機車後，大腿和臀部整段都在曬太陽。</p>
+      </div>
+      <div class="lp-pain-card">
+        <div class="lp-pain-icon">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+        <div class="lp-pain-title">包得緊又悶到全身濕</div>
+        <p class="lp-pain-text">很多防曬外套不透風，騎 20 分鐘到學校或公司，裡面衣服已經濕一片。</p>
+      </div>
+      <div class="lp-pain-card">
+        <div class="lp-pain-icon">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+        </div>
+        <div class="lp-pain-title">長版防曬衣太貴</div>
+        <p class="lp-pain-text">同樣功能的 UV100 長版款要 1,599 元，學生預算很難下手。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="lp-section lp-features-section">
+  <div class="lp-container">
+    <div class="lp-section-header">
+      <div class="lp-section-eyebrow">PRODUCT FEATURES</div>
+      <h2 class="lp-section-title">為什麼這件適合騎車的你？</h2>
+      <p class="lp-section-desc">590 元，一件解決曬、悶、顯胖三件事。</p>
+    </div>
+
+    <div class="lp-features-grid">
+      <div class="lp-feature-card">
+        <div class="lp-feature-icon">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+        <div class="lp-feature-title">UPF50+ 冰絲布</div>
+        <div class="lp-feature-text">輕薄涼爽的冰絲布＋彈性纖維，大太陽騎車也安心。</div>
+      </div>
+      <div class="lp-feature-card">
+        <div class="lp-feature-icon">
+          <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+        <div class="lp-feature-title">長版遮臀＋下擺開衩</div>
+        <div class="lp-feature-text">衣長約 100–108 cm 遮住臀部和大腿，下擺開衩，跨上機車不會繃緊。</div>
+      </div>
+      <div class="lp-feature-card">
+        <div class="lp-feature-icon">
+          <i class="fa-solid fa-mobile-screen-button"></i>
+        </div>
+        <div class="lp-feature-title">背部透氣網孔＋收腰剪裁</div>
+        <div class="lp-feature-text">背部、腋下有透氣網孔，比全封閉的款式通風；收腰剪裁穿起來顯瘦。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="specs" class="lp-section">
+  <div class="lp-container">
+    <div class="lp-section-header">
+      <div class="lp-section-eyebrow">DETAILS &amp; SPECS</div>
+      <h2 class="lp-section-title">商品規格</h2>
+      <p class="lp-section-desc">下單前先看清楚，尺寸問題歡迎聊聊。</p>
+    </div>
+
+    <div class="lp-specs-grid">
+      <div class="lp-specs-card">
+        <h3>UPF50+ 長版遮臀防曬外套 女 收腰連帽</h3>
+        <ul class="lp-specs-list"><li><i class="fa-solid fa-check"></i><span>材質：冰絲布＋彈性纖維，背部網孔透氣布</span></li><li><i class="fa-solid fa-check"></i><span>尺寸：S / M / L / XL / 2XL（收腰版型合身，喜歡寬鬆可大一號）</span></li><li><i class="fa-solid fa-check"></i><span>顏色：黑、霧粉、奶茶、淺灰</span></li><li><i class="fa-solid fa-check"></i><span>衣長：約 100–108 cm（遮臀）</span></li><li><i class="fa-solid fa-check"></i><span>洗滌：翻面放洗衣袋冷水洗，不要烘乾</span></li></ul>
+
+        <div class="lp-specs-highlight"><div>售價 NT$590，新客滿 $299 折 $30。下單後 24 小時內出貨（例假日除外）。</div></div>
+
+        <div class="lp-specs-taglist"><span class="lp-specs-tag">UPF50+</span><span class="lp-specs-tag">長版遮臀</span><span class="lp-specs-tag">收腰顯瘦</span><span class="lp-specs-tag">透氣網孔</span></div>
+      </div>
+
+      <div class="lp-specs-image-card">
+        <img src="https://cc5.ocu.edu.tw/wu/shopee_integrated/uploads/products/6b04627026ce8_1795449456.jpg" alt="UPF50+ 長版遮臀防曬外套">
+        <p>收腰剪裁＋下擺開衩，騎車、走路都好活動。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews" class="lp-section lp-testimonials-section">
+  <div class="lp-container">
+    <div class="lp-section-header">
+      <div class="lp-section-eyebrow">OUR PROMISE</div>
+      <h2 class="lp-section-title">買得安心</h2>
+      <p class="lp-section-desc">新店還沒有評價，我們用保證說話。</p>
+    </div>
+
+    <div class="lp-testimonials-grid"><div class="lp-testimonial-card"><div class="lp-testimonial-header"><div class="lp-avatar">7</div><div><div class="lp-testimonial-name">7 天鑑賞期</div></div></div><p>收到後 7 天內，未穿著可退換。</p></div><div class="lp-testimonial-card"><div class="lp-testimonial-header"><div class="lp-avatar">30</div><div><div class="lp-testimonial-name">30 天免費換新</div></div></div><p>收到 30 天內開線、拉鍊壞掉，免費換新。</p></div><div class="lp-testimonial-card"><div class="lp-testimonial-header"><div class="lp-avatar">24</div><div><div class="lp-testimonial-name">24 小時出貨</div></div></div><p>下單後 24 小時內出貨（例假日除外）。</p></div></div>
+  </div>
+</section>
+
+<section id="final-cta" class="lp-final-cta">
+  <div class="lp-container">
+    <div class="lp-final-cta-inner">
+      <div>
+        <div class="lp-final-cta-title">590 元，騎車也能從頭遮到腿</div>
+        <p class="lp-final-cta-desc">
+          新客滿 $299 折 $30，點下面按鈕到商城下單。
+        </p>
+        <a class="lp-btn-final" href="https://cc5.ocu.edu.tw/wu/shopee_integrated/platform/product_detail.php?id=1770" target="_blank" rel="noopener">
+          <i class="fa-solid fa-cart-shopping"></i>
+          領券穿上它
+        </a>
+        
+        <div class="lp-final-cta-meta">
+          <span><i class="fa-solid fa-shield-heart"></i> 7 天鑑賞期</span>
+          <span><i class="fa-solid fa-wand-magic-sparkles"></i> 30 天開線、拉鍊壞掉免費換新</span>
+        </div>
+      </div>
+      <div class="lp-final-cta-pricebox">
+        <div class="lp-final-cta-badge">
+          <i class="fa-solid fa-fire"></i>
+          售價
+        </div>
+        <div class="lp-final-cta-price-now">NT$590</div>
+        
+        <div class="lp-btn-final-sub">
+          寫給目標客群：18–35 歲騎機車通勤、上課的女生與情侶，預算 200–600 元，想防曬又怕悶熱
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="lp-footer"><div class="lp-container" style="text-align:center">© 2026 曬不著 SunHide · 品牌官網</div></footer>
+
+
+</body></html>
